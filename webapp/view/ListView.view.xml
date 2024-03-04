@@ -1,0 +1,135 @@
+<mvc:View
+    controllerName="com.sap.suppliereddcheck.controller.ListView"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                id="idSupplierTable"
+                items="{myModel>/suppliers}"
+                autoPopinMode="true"
+            >
+                <headerToolbar>
+                    <Toolbar id="_IDGenToolbar1">
+                        <HBox
+                            id="_IDGenHBox1"
+                            alignItems="Center"
+                            width="50%"
+                            justifyContent="SpaceAround"
+                        >
+                            <Label
+                                id="_IDGenLabel4"
+                                text="Supplier No"
+                                class="sapUiTinyMarginEnd"
+                            />
+                            <SearchField
+                                id="_IDGenSearchField1"
+                                value=""
+                                liveChange="onchange"
+                            />
+                            <Button
+                                text="Download Report"
+                                type="Emphasized"
+                            />
+                        </HBox>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column id="_IDGenColumn1">
+                        <Text
+                            id="_IDGenText2"
+                            text="Supplier No"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn2">
+                        <Text
+                            id="_IDGenText3"
+                            text="Legal Name"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn3">
+                        <Text
+                            id="_IDGenText4"
+                            text="Company Origin"
+                        />
+                    </Column>
+                    <Column id="_IDGenColumn4">
+                        <Text
+                            id="_IDGenText5"
+                            text="TRN"
+                        />
+                    </Column>
+
+                    <Column id="BIN">
+                        <Text text="BIN" />
+                    </Column>
+                    <Column id="VAT">
+                        <Text text="VAT" />
+                    </Column>
+                    <Column id="RegistrationCertificate">
+                        <Text text="Registration Certificate" />
+                    </Column>
+
+                    <Column id="YOI">
+                        <Text text="Year of incorportation" />
+                    </Column>
+
+                    <Column id="compHQD">
+                        <Text text="Company Headquarter" />
+                    </Column>
+
+                    <Column id="License">
+                        <Text text="License No" />
+                    </Column>
+                    <Column id="Status">
+                        <Text text="Status" />
+                    </Column>
+                    <Column id="Actions">
+                        <Text text="Action" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem id="_IDGenColumnListItem1">
+                        <cells>
+                            <Text
+                                id="_IDGenText6"
+                                text="{myModel>SupplierNumber}"
+                            />
+                            <Text
+                                id="_IDGenText7"
+                                text="{myModel>SupplierLegalName}"
+                            />
+                            <Text
+                                id="_IDGenText8"
+                                text="{myModel>CompanyOrigin}"
+                            />
+                            <Text
+                                id="_IDGenText9"
+                                text="{myModel>TINNumber}"
+                            />
+
+                            <Text text="{myModel>BICNumber}" />
+                            <Text text="{myModel>VATNUMBER}" />
+                            <Text
+                                text="{myModel>RegistrationCertificateNumber}"
+                            />
+                            <Text text="{myModel>YearOfIncorportation}" />
+                            <Text text="{myModel>CompanyHeadquarter}" />
+                            <Text text="{myModel>LicenseNumber}" />
+                            <Text text="{myModel>Status}" />
+                            <Button
+                                text="View Details"
+                                press="onNav"
+                            />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

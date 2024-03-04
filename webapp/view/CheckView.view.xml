@@ -1,0 +1,212 @@
+<mvc:View
+    controllerName="com.sap.suppliereddcheck.controller.CheckView"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+>
+    <Page
+        id="page"
+        title="Verify Details"
+    >
+        <uxap:ObjectPageLayout
+            id="VerifyObjectPageLayout"
+            upperCaseAnchorBar="false"
+            showAnchorBar="true"
+            enableLazyLoading="true"
+        >
+            <uxap:headerTitle>
+                <uxap:ObjectPageDynamicHeaderTitle>
+                    <uxap:expandedHeading>
+                        <Title
+                            text="SUP12345"
+                            wrapping="true"
+                        />
+                    </uxap:expandedHeading>
+
+                    	<uxap:expandedContent>
+						<Link text="DeniseSmith@Global.com"/>
+				</uxap:expandedContent>
+                    <uxap:actions>
+                        <Button
+                            id="_IDGenButton4"
+                            text="Submit for approval"
+                            type="Success"
+                        />
+                    </uxap:actions>
+                </uxap:ObjectPageDynamicHeaderTitle>
+            </uxap:headerTitle>
+            <uxap:sections>
+                <uxap:ObjectPageSection
+                    id="_IDGenObjectPageSection3"
+                    showTitle="false"
+                >
+                    <uxap:subSections>
+                        <uxap:ObjectPageSubSection
+                            title="Supplier Verification Details"
+                        >
+                            <uxap:blocks>
+                                <Table
+                                    id="idSupplierVerificationTable"
+                                    items="{myModel>/suppliersVerification}"
+                                    autoPopinMode="true"
+                                >
+                                    <columns>
+                                        <Column>
+                                            <Text text="Supplier Details" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="KPO Record" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Govt. Record" />
+                                        </Column>
+
+                                        <Column>
+                                            <Text text="Status" />
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text
+                                                    text="{myModel>SupplierDetail}"
+                                                />
+                                                <Text
+                                                    text="{myModel>KPORecord}"
+                                                />
+                                                <Text
+                                                    text="{myModel>GovtRecord}"
+                                                />
+                                                <Button
+                                                    icon="sap-icon://accept"
+                                                    text="Matched"
+                                                    type="Accept"
+                                                />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                        <uxap:ObjectPageSubSection
+                            title="KPO EDD Questionnaires Status"
+                        >
+                            <uxap:blocks>
+                                <Table
+                                    id="idKPOQuestionsTable"
+                                    items="{myModel>/questionsResponse}"
+                                    autoPopinMode="true"
+                                >
+                                    <columns>
+                                        <Column>
+                                            <Text text="Questions" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Supplier Response" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Supplier Remarks" />
+                                        </Column>
+                                        <Column>
+                                            <Text text="Status" />
+                                        </Column>
+                                    </columns>
+                                    <items>
+                                        <ColumnListItem>
+                                            <cells>
+                                                <Text
+                                                    text="{myModel>Questions}"
+                                                />
+                                                <Text
+                                                    text="{myModel>Response}"
+                                                />
+                                                <Text
+                                                    text="{myModel>SupplierComments}"
+                                                />
+
+                                                <Button
+                                                    icon="sap-icon://accept"
+                                                    text="Positive"
+                                                    type="Accept"
+                                                />
+                                            </cells>
+                                        </ColumnListItem>
+                                    </items>
+                                </Table>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                        <uxap:ObjectPageSubSection
+                            title="Supplier Documents For Review"
+                        >
+                            <uxap:blocks>
+                                <UploadCollection
+                                    id="UploadCollection"
+                                    multiple="true"
+                                    change="onChange"
+                                    fileDeleted="onFileDeleted"
+                                    filenameLengthExceed="onFilenameLengthExceed"
+                                    fileRenamed="onFileRenamed"
+                                    fileSizeExceed="onFileSizeExceed"
+                                    fileType=""
+                                    selectionChange="onSelectionChange"
+                                    typeMissmatch="onTypeMissmatch"
+                                    uploadComplete="onUploadComplete"
+                                    beforeUploadStarts="onBeforeUploadStarts"
+                                    uploadTerminated="onUploadTerminated"
+                                    items="{
+					path: 'myModel>/attachment',
+					templateShareable: false
+				}"
+                                    numberOfAttachmentsText="Uploaded (8)"
+                                    showSeparators="None"
+                                    uploadEnabled="false"
+                                    uploadButtonInvisible="true"
+                                >
+                                    <toolbar>
+                                        <OverflowToolbar id="myId">
+                                            <Title
+                                                id="attachmentTitle"
+                                                text="Supplier Documents"
+                                            />
+                                            <ToolbarSpacer />
+                                        </OverflowToolbar>
+                                    </toolbar>
+                                    <items>
+                                        <UploadCollectionItem
+                                            documentId="{myModel>documentId}"
+                                            fileName="{myModel>fileName}"
+                                            mimeType="{myModel>mimeType}"
+                                            thumbnailUrl="{myModel>thumbnailUrl}"
+                                            url="{myModel>url}"
+                                            enableEdit="false"
+                                            enableDelete="false"
+                                            visibleDelete="false"
+                                            visibleEdit="false"
+                                        />
+                                    </items>
+                                </UploadCollection>
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+
+                        <uxap:ObjectPageSubSection title="Reviewer Remarks">
+                            <uxap:blocks>
+                                <TextArea
+                                    cols="90"
+                                    rows="10"
+                                    value="reviewed. All Okay"
+                                />
+                            </uxap:blocks>
+                        </uxap:ObjectPageSubSection>
+                    </uxap:subSections>
+                </uxap:ObjectPageSection>
+            </uxap:sections>
+        </uxap:ObjectPageLayout>
+    </Page>
+</mvc:View>
