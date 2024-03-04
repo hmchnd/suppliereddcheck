@@ -1,0 +1,225 @@
+<mvc:View
+    controllerName="com.sap.suppliereddcheck.controller.EddView"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+    <NavContainer id="wizardNavContainer">
+        <pages>
+            <Page
+                id="wizardContentPage"
+                showHeader="false"
+            >
+                <content>
+                    <Wizard
+                        id="CreateProductWizard"
+                        class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+                        complete="wizardCompletedHandler"
+                    >
+                        <WizardStep
+                            id="ProductTypeStep"
+                            title="Supplier Detaills"
+                            validated="true"
+                        >
+                            <form:SimpleForm editable="true">
+                                <Label
+                                    text="Supplier No"
+                                    required="true"
+                                />
+                                <Select
+                                    id="Select1112"
+                                    change="onSelectChangee"
+                                    items="{sModel>/}"
+                                >
+                                    <items>
+                                        <core:Item
+                                            id="_IDGenItem1245"
+                                            key="{sModel>text}"
+                                            text="{sModel>text}"
+                                        />
+                                    </items>
+                                </Select>
+                                <Label text="Legal Name" />
+                                <Input
+                                    value="Global Enterprises Inc."
+                                    editable="false"
+                                />
+                                <Label text="Company Origin" />
+                                <Input
+                                    value="United Kingdom"
+                                    editable="false"
+                                />
+                                <Label text="VAT" />
+                                <Input
+                                    value="GBVAT456"
+                                    editable="false"
+                                />
+                                <Label text="BIN" />
+                                <Input
+                                    value="BICEU456"
+                                    editable="false"
+                                />
+                                <Label text="Desc" />
+                                <TextArea height="100px" />
+                            </form:SimpleForm>
+                            <Toolbar>
+                                <ToolbarSpacer />
+                                <Button
+                                    text="Validate Supplier Detail"
+                                    type="Emphasized"
+                                />
+                            </Toolbar>
+                        </WizardStep>
+                        <WizardStep
+                            id="ProductInfoStep"
+                            validated="true"
+                            title="Questionnaire table"
+                            activate="additionalInfoValidation"
+                        >
+                            <Table
+                                id="idSupplierTable"
+                                items="{myModel>/}"
+                                autoPopinMode="true"
+                            >
+                                <headerToolbar>
+                                    <Toolbar id="_IDGenToolbar1">
+                                        <HBox
+                                            id="_IDGenHBox1"
+                                            alignItems="Center"
+                                            width="50%"
+                                            justifyContent="SpaceAround"
+                                        />
+                                    </Toolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column id="_IDGenColumn1">
+                                        <Text
+                                            id="_IDGenText2"
+                                            text="Questions"
+                                        />
+                                    </Column>
+                                    <Column id="_IDGenColumn2">
+                                        <Text
+                                            id="_IDGenText3"
+                                            text="Select"
+                                        />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem id="_IDGenColumnListItem1">
+                                        <cells>
+                                            <Text
+                                                id="_IDGenText6"
+                                                text="{myModel>question}"
+                                            />
+
+                                            <CheckBox text="" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                        </WizardStep>
+                        <WizardStep
+                            id="ProductTypeStep11"
+                            title="Preview"
+                            validated="false"
+                        >
+                            <form:SimpleForm editable="true">
+                                <Label
+                                    text="Supplier No"
+                                    required="true"
+                                />
+                                <Select
+                                    id="Sele"
+                                    change="onSelectChangee"
+                                    items="{sModel>/}"
+                                >
+                                    <items>
+                                        <core:Item
+                                            id="_IDGenItem1245622"
+                                            key="{sModel>text}"
+                                            text="{sModel>text}"
+                                        />
+                                    </items>
+                                </Select>
+                                <Label text="Legal Name" />
+                                <Input
+                                    value="Global Enterprises Inc."
+                                    editable="false"
+                                />
+                                <Label text="Company Origin" />
+                                <Input
+                                    value="United Kingdom"
+                                    editable="false"
+                                />
+                                <Label text="VAT" />
+                                <Input
+                                    value="GBVAT456"
+                                    editable="false"
+                                />
+                                <Label text="BIN" />
+                                <Input
+                                    value="BICEU456"
+                                    editable="false"
+                                />
+                                <Label text="Desc" />
+                                <TextArea height="100px" />
+                            </form:SimpleForm>
+                            <Table
+                                id="idSupplierTable134"
+                                items="{myModel>/}"
+                                autoPopinMode="true"
+                            >
+                                <headerToolbar>
+                                    <Toolbar id="_IDGenToolbar111">
+                                        <HBox
+                                            id="_IDGenHBox11"
+                                            alignItems="Center"
+                                            width="50%"
+                                            justifyContent="SpaceAround"
+                                        />
+                                    </Toolbar>
+                                </headerToolbar>
+                                <columns>
+                                    <Column id="_IDGenColumn11">
+                                        <Text
+                                            id="_IDGenText22"
+                                            text="Questions"
+                                        />
+                                    </Column>
+                                    <Column id="_IDGenColumn21">
+                                        <Text
+                                            id="_IDGenText31"
+                                            text="Select"
+                                        />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem id="_IDGenColumnListItem11">
+                                        <cells>
+                                            <Text
+                                                id="_IDGenText61"
+                                                text="{myModel>question}"
+                                            />
+
+                                            <CheckBox text="" />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
+                            <Toolbar>
+                                <ToolbarSpacer />
+                                <Button
+                                    text="Send To Supplier"
+                                    type="Emphasized"
+                                />
+                            </Toolbar>
+                        </WizardStep>
+                    </Wizard>
+                </content>
+            </Page>
+        </pages>
+    </NavContainer>
+</mvc:View>

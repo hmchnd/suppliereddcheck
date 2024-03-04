@@ -13,6 +13,10 @@ sap.ui.define([
             },
             onNav:function(){
                 this.getOwnerComponent().getRouter().navTo("RouteCheckView");
+            },
+            onCreate:function(){
+                this.getOwnerComponent().getRouter().navTo("RouteEddView");
+
             }
         });
     });

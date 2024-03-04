@@ -103,6 +103,13 @@
           "target": [
             "TargetCheckView"
           ]
+        },
+        {
+          "name": "RouteEddView",
+          "pattern": "EddCheck",
+          "target": [
+            "TargetEddView"
+          ]
         }
       ],
       "targets": {
@@ -119,6 +126,13 @@
           "clearControlAggregation": false,
           "viewId": "CheckView",
           "viewName": "CheckView"
+        },
+        "TargetEddView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "EddView",
+          "viewName": "EddView"
         }
       }
     },

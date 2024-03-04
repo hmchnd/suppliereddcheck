@@ -31,10 +31,20 @@
                                 id="_IDGenSearchField1"
                                 value=""
                                 liveChange="onchange"
+                                
                             />
                             <Button
                                 text="Download Report"
                                 type="Emphasized"
+                                class="sapUiTinyMarginBegin"
+                            
+                            />
+                            <Button
+                            text="Create New EDD Check"
+                            type="Emphasized"
+                            press="onCreate"
+                            class="sapUiTinyMarginBegin"
+                            
                             />
                         </HBox>
                     </Toolbar>
