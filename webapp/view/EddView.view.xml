@@ -120,6 +120,13 @@
                                     </ColumnListItem>
                                 </items>
                             </Table>
+                            <Toolbar>
+                                <ToolbarSpacer />
+                                <Button
+                                    text="Send To Supplier"
+                                    type="Emphasized"
+                                />
+                            </Toolbar>
                         </WizardStep>
                         <WizardStep
                             id="ProductTypeStep11"
@@ -209,13 +216,6 @@
                                     </ColumnListItem>
                                 </items>
                             </Table>
-                            <Toolbar>
-                                <ToolbarSpacer />
-                                <Button
-                                    text="Send To Supplier"
-                                    type="Emphasized"
-                                />
-                            </Toolbar>
                         </WizardStep>
                     </Wizard>
                 </content>
