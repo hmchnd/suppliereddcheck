@@ -110,6 +110,13 @@
           "target": [
             "TargetEddView"
           ]
+        },
+        {
+          "name": "RouteVendorView",
+          "pattern": "VendorCheck",
+          "target": [
+            "TargetVendorView"
+          ]
         }
       ],
       "targets": {
@@ -133,6 +140,13 @@
           "clearControlAggregation": false,
           "viewId": "EddView",
           "viewName": "EddView"
+        },
+        "TargetVendorView": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "VendorView",
+          "viewName": "VendorView"
         }
       }
     },

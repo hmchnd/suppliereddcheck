@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog id="_IDGenDialog1bb" title="Assessment Question" contentWidth="900px">
+        <content>
+            <f:SimpleForm
+                id="simpleForm"
+                editable="false"
+                labelSpanM="3"
+                labelSpanS="12"
+            >
+                <Label
+                    id="questioncategories11111"
+                    text="Question category"
+                />
+                <Input
+                    id="questioncategory"
+                    value=""
+                />
+
+                <Label
+                    id="question"
+                    text="Question"
+                />
+                <Input
+                    id="question01"
+                    value=""
+                />
+    
+                              
+            </f:SimpleForm>
+        </content>
+        <Toolbar id="_IDGenToolbar1001001001">
+            <ToolbarSpacer id="_IDGenToolbarSpacer100100174" />
+            <Button id="_IDGenButton1nmcj"
+                text="Save"
+                type="Emphasized"
+                press="OnSave"
+            />
+            <Button id="_IDGenButton2jdhf"
+                text="Cancel"
+                type="Emphasized"
+                press="onCancel"
+            />
+        </Toolbar>
+    </Dialog>
+</core:FragmentDefinition>

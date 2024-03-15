@@ -14,17 +14,74 @@
             >
                 <content>
                     <Wizard
-                        id="CreateProductWizard"
+                        id="CreateProductWizard12"
                         class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
                         complete="wizardCompletedHandler"
                     >
                         <WizardStep
-                            id="ProductTypeStep"
-                            title="Supplier Detaills"
+                            id="ProductTypeStep12"
+                            title="Add Assessment Details"
                             validated="true"
                         >
-                            <form:SimpleForm editable="true">
+                            <form:SimpleForm
+                                id="_IDGenSimpleForm1fhsh"
+                                editable="true"
+                                layout="ResponsiveGridLayout"
+                            >
+                                <Label 
+                                    id="_IDGenLabel1vknv"
+                                    text="Assessment Title"
+                                    required="true"
+                                />
+                                <Input
+                                    id="inp111"
+                                    value=""
+                                />
                                 <Label
+                                    id="_IDGenLabel1fgj"
+                                    text="Assessment Template"
+                                    required="true"
+                                />
+                                <Select
+                                    id="Select11111240938409"
+                                    change="onSelectChangee"
+                                    items="{atModel>/}"
+                                >
+                                    <items>
+                                        <core:Item
+                                            id="_IDGenItem124534"
+                                            key="{atModel>text}"
+                                            text="{atModel>text}"
+                                        />
+                                    </items>
+                                </Select>
+                            </form:SimpleForm>
+                        </WizardStep>
+                        <WizardStep
+                            id="ProductTypeStep"
+                            title="Supplier Details"
+                            validated="true"
+                        >
+                            <form:SimpleForm
+                                id="_IDGenSimpleForm1"
+                                editable="true"
+                                layout="ResponsiveGridLayout"
+                                labelSpanXL="4"
+                                labelSpanL="8"
+                                labelSpanM="4"
+                                labelSpanS="12"
+                                adjustLabelSpan="false"
+                                emptySpanXL="0"
+                                emptySpanL="0"
+                                emptySpanM="0"
+                                emptySpanS="0"
+                                columnsXL="3"
+                                columnsL="2"
+                                columnsM="2"
+                                singleContainerFullSize="false"
+                            >
+                                <Label
+                                    id="_IDGenLabel1"
                                     text="Supplier No"
                                     required="true"
                                 />
@@ -41,41 +98,95 @@
                                         />
                                     </items>
                                 </Select>
-                                <Label text="Legal Name" />
-                                <Input
-                                    value="Global Enterprises Inc."
-                                    editable="false"
-                                />
-                                <Label text="Company Origin" />
-                                <Input
-                                    value="United Kingdom"
-                                    editable="false"
-                                />
-                                <Label text="VAT" />
-                                <Input
-                                    value="GBVAT456"
-                                    editable="false"
-                                />
-                                <Label text="BIN" />
-                                <Input
-                                    value="BICEU456"
-                                    editable="false"
-                                />
-                                <Label text="Desc" />
-                                <TextArea height="100px" />
                             </form:SimpleForm>
-                            <Toolbar>
-                                <ToolbarSpacer />
-                                <Button
-                                    text="Validate Supplier Detail"
-                                    type="Emphasized"
-                                />
-                            </Toolbar>
+                            <Table
+                                items="{tModel>/}"
+                                id="t1"
+                                mode="MultiSelect"
+                                class=""
+                            >
+                                <columns>
+                                    <Column id="c01">
+                                        <Text
+                                            text="Supplier No"
+                                            id="txt11"
+                                        />
+                                    </Column>
+                                    <Column id="c1">
+                                        <Text
+                                            text="Legal Name"
+                                            id="txt1"
+                                        />
+                                    </Column>
+                                    <Column id="c2">
+                                        <Text
+                                            text="Company Origin"
+                                            id="txt2"
+                                        />
+                                    </Column>
+                                    <Column id="c3">
+                                        <Text
+                                            text="VAT"
+                                            id="txt3"
+                                        />
+                                    </Column>
+                                    <Column id="newColumn6ID">
+                                        <Text
+                                            text="BIN"
+                                            id="newText6ID"
+                                        />
+                                    </Column>
+                                    <Column id="newColumn7ID">
+                                        <Text
+                                            text="Last Verify on"
+                                            id="newText7ID"
+                                        />
+                                    </Column>
+                                </columns>
+                                <items>
+                                    <ColumnListItem
+                                        id="_IDGenColumnListItem13245"
+                                        vAlign="Middle"
+                                    >
+                                        <cells>
+                                            <Text
+                                                id="_IDGenText01"
+                                                text="{tModel>supplierno}"
+                                            />
+                                            <Text
+                                                id="_IDGenText1"
+                                                text="{tModel>legalname}"
+                                            />
+                                            <Text
+                                                id="_IDGenText243245"
+                                                text="{tModel>companyorigin}"
+                                            />
+                                            <Text
+                                                id="_IDGenText7"
+                                                text="{tModel>vat}"
+                                            />
+                                            <Text
+                                                id="_IDGenText33445"
+                                                text="{tModel>bin}"
+                                            />
+                                            <DatePicker
+                                                id="_IDGenDatePicker1"
+                                                displayFormat="yyyy"
+                                                value="{tModel>lastverifyon}"
+                                            />
+                                            <Text
+                                                id="_IDGenText4"
+                                                text="{tModel>lastverifyon}"
+                                            />
+                                        </cells>
+                                    </ColumnListItem>
+                                </items>
+                            </Table>
                         </WizardStep>
                         <WizardStep
-                            id="ProductInfoStep"
+                            id="selectinfo"
                             validated="true"
-                            title="Questionnaire table"
+                            title="Select Question for Assessment"
                             activate="additionalInfoValidation"
                         >
                             <Table
@@ -105,6 +216,14 @@
                                             id="_IDGenText3"
                                             text="Select"
                                         />
+                                        
+                                    </Column>
+                                    <Column id="_IDGenColumn21">
+                                        <Text
+                                            id="_IDGenText12"
+                                            text="Response Type"
+                                        />
+                                        
                                     </Column>
                                 </columns>
                                 <items>
@@ -114,108 +233,36 @@
                                                 id="_IDGenText6"
                                                 text="{myModel>question}"
                                             />
-
-                                            <CheckBox text="" />
+                                            <CheckBox
+                                                id="_IDGenCheckBox1"
+                                                text=""
+                                            />
+                                            <RadioButtonGroup
+                                                        id="GroupA"
+                                                    >
+                                                        <RadioButton
+                                                            id="_IDGenRadioButton1"
+                                                            text="Yes"
+                                                            selected="true"
+                                                        />
+                                                        <RadioButton
+                                                            id="_IDGenRadioButton2"
+                                                            text="No"
+                                                        />
+                                                    </RadioButtonGroup>
+                                                    
                                         </cells>
                                     </ColumnListItem>
                                 </items>
                             </Table>
-                            <Toolbar>
-                                <ToolbarSpacer />
+                            <Toolbar id="_IDGenToolbar2">
+                                <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                                 <Button
-                                    text="Send To Supplier"
+                                    id="_IDGenButton1"
+                                    text="Submit to Supplier"
                                     type="Emphasized"
                                 />
                             </Toolbar>
-                        </WizardStep>
-                        <WizardStep
-                            id="ProductTypeStep11"
-                            title="Preview"
-                            validated="false"
-                        >
-                            <form:SimpleForm editable="true">
-                                <Label
-                                    text="Supplier No"
-                                    required="true"
-                                />
-                                <Select
-                                    id="Sele"
-                                    change="onSelectChangee"
-                                    items="{sModel>/}"
-                                >
-                                    <items>
-                                        <core:Item
-                                            id="_IDGenItem1245622"
-                                            key="{sModel>text}"
-                                            text="{sModel>text}"
-                                        />
-                                    </items>
-                                </Select>
-                                <Label text="Legal Name" />
-                                <Input
-                                    value="Global Enterprises Inc."
-                                    editable="false"
-                                />
-                                <Label text="Company Origin" />
-                                <Input
-                                    value="United Kingdom"
-                                    editable="false"
-                                />
-                                <Label text="VAT" />
-                                <Input
-                                    value="GBVAT456"
-                                    editable="false"
-                                />
-                                <Label text="BIN" />
-                                <Input
-                                    value="BICEU456"
-                                    editable="false"
-                                />
-                                <Label text="Desc" />
-                                <TextArea height="100px" />
-                            </form:SimpleForm>
-                            <Table
-                                id="idSupplierTable134"
-                                items="{myModel>/}"
-                                autoPopinMode="true"
-                            >
-                                <headerToolbar>
-                                    <Toolbar id="_IDGenToolbar111">
-                                        <HBox
-                                            id="_IDGenHBox11"
-                                            alignItems="Center"
-                                            width="50%"
-                                            justifyContent="SpaceAround"
-                                        />
-                                    </Toolbar>
-                                </headerToolbar>
-                                <columns>
-                                    <Column id="_IDGenColumn11">
-                                        <Text
-                                            id="_IDGenText22"
-                                            text="Questions"
-                                        />
-                                    </Column>
-                                    <Column id="_IDGenColumn21">
-                                        <Text
-                                            id="_IDGenText31"
-                                            text="Select"
-                                        />
-                                    </Column>
-                                </columns>
-                                <items>
-                                    <ColumnListItem id="_IDGenColumnListItem11">
-                                        <cells>
-                                            <Text
-                                                id="_IDGenText61"
-                                                text="{myModel>question}"
-                                            />
-
-                                            <CheckBox text="" />
-                                        </cells>
-                                    </ColumnListItem>
-                                </items>
-                            </Table>
                         </WizardStep>
                     </Wizard>
                 </content>

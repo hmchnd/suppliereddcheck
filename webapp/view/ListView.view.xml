@@ -25,27 +25,43 @@
                             <Label
                                 id="_IDGenLabel4"
                                 text="Supplier No"
-                                class="sapUiTinyMarginEnd"
+                                class="sapUiTinyMarginBegin"
                             />
                             <SearchField
                                 id="_IDGenSearchField1"
                                 value=""
                                 liveChange="onchange"
+                                class="sapUiTinyMarginEnd"
                                 
                             />
-                            <Button
+                            <Button id="_IDGenButton1"
                                 text="Download Report"
                                 type="Emphasized"
                                 class="sapUiTinyMarginBegin"
                             
                             />
-                            <Button
-                            text="Create New EDD Check"
+                            <Button id="_IDGenButton2"
+                            text="Create New Questions"
+                            type="Emphasized"
+                            press="onCreateNew"
+                            class="sapUiTinyMarginBegin"
+                            
+                            />
+                             <Button id="_IDGenButton3"
+                            text="Create Vendor Assessment Templete"
+                            type="Emphasized"
+                            press="onCreateVendor"
+                            class="sapUiTinyMarginBegin"
+                            
+                            />
+                            <Button id="_IDGenButton4"
+                            text="Manage Vendor Assessments"
                             type="Emphasized"
                             press="onCreate"
                             class="sapUiTinyMarginBegin"
                             
                             />
+                            
                         </HBox>
                     </Toolbar>
                 </headerToolbar>
@@ -76,31 +92,31 @@
                     </Column>
 
                     <Column id="BIN">
-                        <Text text="BIN" />
+                        <Text id="_IDGenText10" text="BIN" />
                     </Column>
                     <Column id="VAT">
-                        <Text text="VAT" />
+                        <Text id="_IDGenText11" text="VAT" />
                     </Column>
                     <Column id="RegistrationCertificate">
-                        <Text text="Registration Certificate" />
+                        <Text id="_IDGenText12" text="Registration Certificate" />
                     </Column>
 
                     <Column id="YOI">
-                        <Text text="Year of incorportation" />
+                        <Text id="_IDGenText13" text="Year of incorportation" />
                     </Column>
 
                     <Column id="compHQD">
-                        <Text text="Company Headquarter" />
+                        <Text id="_IDGenText14" text="Company Headquarter" />
                     </Column>
 
                     <Column id="License">
-                        <Text text="License No" />
+                        <Text id="_IDGenText15" text="License No" />
                     </Column>
                     <Column id="Status">
-                        <Text text="Status" />
+                        <Text id="_IDGenText16" text="Status" />
                     </Column>
                     <Column id="Actions">
-                        <Text text="Action" />
+                        <Text id="_IDGenText17" text="Action" />
                     </Column>
                 </columns>
                 <items>
@@ -123,16 +139,16 @@
                                 text="{myModel>TINNumber}"
                             />
 
-                            <Text text="{myModel>BICNumber}" />
-                            <Text text="{myModel>VATNUMBER}" />
-                            <Text
+                            <Text id="_IDGenText18" text="{myModel>BICNumber}" />
+                            <Text id="_IDGenText19" text="{myModel>VATNUMBER}" />
+                            <Text id="_IDGenText20"
                                 text="{myModel>RegistrationCertificateNumber}"
                             />
-                            <Text text="{myModel>YearOfIncorportation}" />
-                            <Text text="{myModel>CompanyHeadquarter}" />
-                            <Text text="{myModel>LicenseNumber}" />
-                            <Text text="{myModel>Status}" />
-                            <Button
+                            <Text id="_IDGenText21" text="{myModel>YearOfIncorportation}" />
+                            <Text id="_IDGenText22" text="{myModel>CompanyHeadquarter}" />
+                            <Text id="_IDGenText23" text="{myModel>LicenseNumber}" />
+                            <Text id="_IDGenText24" text="{myModel>Status}" />
+                            <Button id="_IDGenButton5"
                                 text="View Details"
                                 press="onNav"
                             />
